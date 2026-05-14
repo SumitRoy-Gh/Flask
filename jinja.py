@@ -1,3 +1,13 @@
+###Building urls dynamically
+##variable 
+##Jinja 2 Tempplate Engine
+
+##Jinja 2 template engine
+'''
+{{ }}expressions to print output in html
+{% %} control statements like for loop, if else etc
+{# #} comments
+'''
 from flask import Flask,request,session,redirect,url_for,render_template
 app = Flask(__name__)
 app.secret_key = '123456'
@@ -28,6 +38,18 @@ def submit():
         return f"<h1>Hello {name}</h1>"
     return render_template('form.html')
 
+##Variable rule
+@app.route('/successres/<int:score>')
+def successres(score):
+    res=""
+    if score>50:
+        res="PASS"
+    else:
+        res="FAIL"
+
+    exp={'score':score,'res':res}
+
+    return render_template('result1.html', results=exp)
 
 if __name__ == "__main__":
     app.run(debug=True)
