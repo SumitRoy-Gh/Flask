@@ -1,0 +1,25 @@
+{
+  "all_items_response": [
+    {
+      "id": 1,
+      "task": "python",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "task": "Flask",
+      "completed": false
+    }
+  ],
+  "single_item_response": {
+    "id": 1,
+    "task": "python",
+    "completed": false
+  },
+  "error_response": {
+    "message": "Item not found"
+  },
+  "success_response": {
+    "message": "Item added successfully"
+  }
+}
